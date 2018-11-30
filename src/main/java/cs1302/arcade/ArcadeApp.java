@@ -10,11 +10,12 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.scene.layout.Pane;
 
 public class ArcadeApp extends Application {
 
     Random rng = new Random();
-    int i = 0;
+    Pane pane;
     @Override
     public void start(Stage stage) {
 
@@ -56,6 +57,10 @@ public class ArcadeApp extends Application {
 	group.requestFocus();
 
     } // start
+
+    public void setPane(Pane pane){
+	this.pane = pane;
+    }
 
     public static void main(String[] args) {
 	try {

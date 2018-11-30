@@ -12,15 +12,14 @@ public class Menu extends VBox{
 
     public Menu(Application app){
 	super();
-
+	this.app = app;
 	game1 = new Button("game1");
-	game1.setOnAction(event -> app.setPane(new Tetris()));//or whatever game we choose
-
+	game1.setOnAction(event -> app.setPane(new Checkers()));
+	
 	game2 = new Button("game2");
 	game2.setOnAction(event -> app.setPane(new Snake()));//or whatever game we choose
 
 	getChildren().addAll(game1, game2);
-	this.app=app;
     }
 
 
