@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 public class ArcadeApp extends Application {
 
     Random rng = new Random();
-
+    int i = 0;
     @Override
     public void start(Stage stage) {
 
