@@ -16,6 +16,7 @@ public class ArcadeApp extends Application {
 
     Random rng = new Random();
     Pane pane;
+    Scene scene;
     @Override
     public void start(Stage stage) {
 
@@ -36,6 +37,7 @@ public class ArcadeApp extends Application {
 		System.out.println(event);
 		r.setX(rng.nextDouble() * (640 - r.getWidth()));
 		r.setY(rng.nextDouble() * (480 - r.getHeight()));
+		scene.setRoot(new Menu(this));
 	    });
 
 	// when the user presses left and right, move the rectangle
@@ -46,7 +48,7 @@ public class ArcadeApp extends Application {
 		// TODO bounds checking
 	    });
 
-        Scene scene = new Scene(group, 640, 480);
+        scene = new Scene(group, 640, 480);
         stage.setTitle("cs1302-arcade!");
         stage.setScene(scene);
 	stage.sizeToScene();
@@ -59,7 +61,11 @@ public class ArcadeApp extends Application {
     } // start
 
     public void setPane(Pane pane){
-	this.pane = pane;
+	scene.setRoot(pane);
+    }
+
+    public Scene getScene(){
+	return scene;
     }
 
     public static void main(String[] args) {
