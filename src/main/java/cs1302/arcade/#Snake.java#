@@ -43,7 +43,10 @@ public class Snake extends Pane{
 	//erase tail
     }//update
     private void delay(){
+	
 
+
+	
     }//delay
     
    

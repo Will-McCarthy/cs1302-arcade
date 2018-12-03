@@ -12,20 +12,25 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
 
+
 public class ArcadeApp extends Application {
 
     Random rng = new Random();
     Pane pane;
     Scene scene;
+    Stage stage;
     @Override
     public void start(Stage stage) {
+	
 
 	/* You are allowed to rewrite this start method, add other methods, 
 	 * files, classes, etc., as needed. This currently contains some 
 	 * simple sample code for mouse and keyboard interactions with a node
 	 * (rectangle) in a group. 
 	 */
-	
+
+	this.stage = stage;
+     
 	Group group = new Group();           // main container
 	Rectangle r = new Rectangle(20, 20); // some rectangle
 	r.setX(50);                          // 50px in the x direction (right)
@@ -48,7 +53,7 @@ public class ArcadeApp extends Application {
 		// TODO bounds checking
 	    });
 
-        scene = new Scene(group, 640, 480);
+        scene = new Scene(group, 449, 449);
         stage.setTitle("cs1302-arcade!");
         stage.setScene(scene);
 	stage.sizeToScene();
@@ -67,6 +72,9 @@ public class ArcadeApp extends Application {
     public Scene getScene(){
 	return scene;
     }
+    public Stage getStage(){
+	return stage;
+    }//getStage
 
     public static void main(String[] args) {
 	try {
