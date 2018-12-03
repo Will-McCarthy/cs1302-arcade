@@ -32,7 +32,7 @@ public class Snake extends Pane{
 	while(alive){
 	    update();
 	    delay();
-
+	    alive = false;
 
 	}//while
 
