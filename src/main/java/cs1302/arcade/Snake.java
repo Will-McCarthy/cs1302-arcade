@@ -58,14 +58,6 @@ public class Snake extends Pane{
 	time++;
 	moveHead(dir.getX(), dir.getY());
     }//update
-    
-    private void checkWin() {
-	if(tailLength == boardLength*boardLength)
-	{
-	    timeline.stop();
-	    app.setPane(new Menu("You Win-get a life", app));
-	}
-    }//checkWin
    
     private void moveHead(int i, int j){
 	x += i;
