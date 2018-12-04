@@ -7,12 +7,12 @@ import javafx.scene.paint.Paint;
 
 
 public class Board extends GridPane {
-    private int rowLength = 30;
-    private Box[][] squares = new Box[rowLength][];
+    
+    private Box[][] squares;
     private double squareSize = 14;
 
-    public Board(){	
-	
+    public Board(int rowLength){	
+	squares = new Box[rowLength][];	
 	for(int i=0; i<rowLength; i++){
 		squares[i] = new Box[rowLength];
 		for(int j=0; j<rowLength; j++){
@@ -25,9 +25,5 @@ public class Board extends GridPane {
     public Box getBox(int i, int j){
 	return squares[i][j];
     }//getBox
-   
-    public int getBoardLength(){
-	return rowLength;
-    }//getBoardLength
 
-}
+}//class

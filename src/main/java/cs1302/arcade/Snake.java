@@ -10,28 +10,25 @@ import javafx.util.Duration;
 import java.lang.Exception;
 
 public class Snake extends Pane{
-    private Board board = new Board();
+
+    private int boardLength = 30;
+    private Board board = new Board(boardLength);
     private ArcadeApp app;
-    private int x,y;
+    private int x = boardLength/2;
+    private int y = boardLength/2;
     private int xFood, yFood;
-    private Dir dir;
-    private Timeline timeline;
+    private Dir dir = new Dir();
+    private Timeline timeline = new Timeline();;
     private KeyFrame keyframe;
-    private int time;
+    private int time=0;
     private int tailLength = -1;
-    private int boardLength;
     
     public Snake(ArcadeApp app){
 	super();
-	time = 0;
 	this.app = app;
-	dir = new Dir();
 	getChildren().add(board);
-	board.getBox(15, 15).setFill(Color.LIME);
-	x = 15;
-	y = 15;
-	boardLength = board.getBoardLength();
-	makeFood();
+	board.getBox(x, y).setFill(Color.LIME);
+
 	app.getScene().setOnKeyPressed(event -> {	
 		if (event.getCode() == KeyCode.LEFT){dir.changeDir(-1,0);}	
 		if (event.getCode() == KeyCode.RIGHT){dir.changeDir(1,0);}	
@@ -40,9 +37,9 @@ public class Snake extends Pane{
 	    });
 	this.requestFocus();
 
+	makeFood();
 	keyframe = new KeyFrame(Duration.seconds(0.3), event -> update());
 
-	timeline = new Timeline();
 	timeline.setCycleCount(Timeline.INDEFINITE);
 	timeline.getKeyFrames().add(keyframe);
 	timeline.play();
