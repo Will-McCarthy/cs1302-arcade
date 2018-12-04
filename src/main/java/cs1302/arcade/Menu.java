@@ -4,7 +4,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.control.Button;
 import javafx.scene.Group;
 import javafx.stage.Stage;
-
+import javafx.scene.text.Text;
+import javafx.scene.text.Font;
 
 public class Menu extends VBox{
 
@@ -39,7 +40,12 @@ public class Menu extends VBox{
 	getChildren().addAll(game1, game2);
     }
 
-
+    public Menu(String str, ArcadeApp app){
+	this(app);	
+	Text text = new Text(str);
+	text.setFont(new Font(30));
+	getChildren().setAll(text, game1, game2);
+    }
 
     
 }//scene

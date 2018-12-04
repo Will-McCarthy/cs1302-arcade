@@ -17,3 +17,12 @@ Here is a sample entry (delete this line; also: feel free to copy/paste/modify):
    first, but now that we've settled on a regular day/time things are looking
    great! 
 
+
+
+SUN 12/2/2018
+
+Missed the original deadline for first submition, submitting now
+created majority of snake game, need to finish deleting the end of the tail
+also need to work out time/iteration stuff. make it work on the clock
+have a menu up and running- its just two big buttons
+still need to implement checkers
