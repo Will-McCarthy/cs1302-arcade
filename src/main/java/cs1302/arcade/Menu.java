@@ -17,7 +17,7 @@ public class Menu extends VBox{
     public Menu(ArcadeApp app){
 	super();
 	this.app = app;
-	checkers = new Checkers();
+	checkers = new Checkers(app);
 	snake = new Snake(app);
 
 	game1 = new Button("Checkers");
