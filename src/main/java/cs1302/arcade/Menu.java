@@ -11,20 +11,20 @@ public class Menu extends VBox{
 
     private Button game1, game2;
     private ArcadeApp app;
-    private Checkers checkers;
+    private Sodoku sodoku;
     private Snake snake;
 
     public Menu(ArcadeApp app){
 	super();
 	this.app = app;
-	checkers = new Checkers(app);
+	sodoku = new Sodoku(app);
 	snake = new Snake(app);
 
-	game1 = new Button("Checkers");
+	game1 = new Button("Sodoku");
 	game1.setPrefHeight(app.getScene().getHeight()/2);
 	game1.setPrefWidth(app.getScene().getWidth());
 	game1.setOnAction(event ->{
-		app.setPane(checkers);
+		app.setPane(sodoku);
 	 	app.getStage().sizeToScene();
 	});
 	

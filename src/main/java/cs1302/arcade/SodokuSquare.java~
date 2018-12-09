@@ -1,0 +1,57 @@
+package cs1302.arcade;
+
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
+import javafx.scene.text.Font;
+import javafx.scene.paint.Color;
+import javafx.geometry.Insets;
+import javafx.scene.layout.Pane;
+
+public class SodokuSquare extends GridPane{
+    private SodokuSquare[][] board = new SodokuSquare[3][];
+
+    private Text[][] arr = new Text[3][];
+
+    private SodokuSquare(Sodoku sodoku){
+	setStyle("-fx-background-color: black;");
+	for(int i = 0; i<3; i++){
+		arr[i] = new Text[3];
+		for(int j = 0; j<3; j++){
+			arr[i][j] = new Text(" 1 ");
+			arr[i][j].setFont(new Font(35));
+			//arr[i][j].setPadding(new Insets(6, 6, 6, 6));
+			arr[i][j].setFill(Color.BLACK);
+			Text temp1 = arr[i][j];
+			
+			arr[i][j].setOnMouseClicked(event -> {
+				temp1.setText(" "+ sodoku.getNumSetting() + " ");
+			});
+
+			GridPane temp2 = new GridPane();
+			temp2.add(arr[i][j], 0, 0);
+			temp2.setStyle("-fx-border-color: black;");
+			add(temp2, i, j);
+		}//for j
+	}//for i
+	//setHgap(15);
+	//setVgap(5);
+    }//constructor
+
+
+    public SodokuSquare(int[][] init, Sodoku sodoku){
+	setStyle("-fx-background-color: white;");
+	for(int i = 0; i<3; i++){
+		board[i] = new SodokuSquare[3];
+		for(int j = 0; j<3; j++){
+			board[i][j] = new SodokuSquare(sodoku);
+			board[i][j].setStyle("-fx-border-color: black;");
+			add(board[i][j], i, j);
+		}//for j
+	}//for i
+	//setHgap(20);
+	//setVgap(10);
+    }
+    private String 
+    
+
+}//class
